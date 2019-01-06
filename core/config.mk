@@ -1085,4 +1085,22 @@ include $(BUILD_SYSTEM)/ninja_config.mk
 include $(BUILD_SYSTEM)/soong_config.mk
 endif
 
+ifneq ($(DESCENDANT_BUILD),)
+## We need to be sure the global selinux policies are included
+## last, to avoid accidental resetting by device configs
+# $(eval include device/descendant/sepolicy/common/sepolicy.mk)
+
+# Include any vendor specific config.mk file
+-include $(TOPDIR)vendor/*/build/core/config.mk
+
+# Include any vendor specific apicheck.mk file
+-include $(TOPDIR)vendor/*/build/core/apicheck.mk
+
+# Rules for QCOM targets
+-include $(TOPDIR)vendor/*/build/core/qcom_target.mk
+
+# Rules for MTK targets
+-include $(TOPDIR)vendor/*/build/core/mtk_target.mk
+endif
+
 include $(BUILD_SYSTEM)/dumpvar.mk
