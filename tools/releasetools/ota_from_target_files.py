@@ -807,6 +807,18 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
     system_progress -= 0.1
   if HasVendorPartition(input_zip):
     system_progress -= 0.1
+    
+  model = target_info.GetBuildProp("ro.product.model")
+  build = target_info.GetBuildProp("ro.build.date")
+
+  script.Print(" ╔█████████████████████████████╗ ");
+  script.Print(" ║          Descendant         ║ ");
+  script.Print(" ╚█████████████████████████████╝ ");
+  script.Print("  ║ ║                            ");
+  script.Print("  ╚Compiled: %s "%(build)        ");
+  script.Print("    ║                            ");
+  script.Print("    ╚For: %s   "%(model)         ");
+  script.Print(" ███████████████████████████████ ");
 
   script.ShowProgress(system_progress, 0)
 
