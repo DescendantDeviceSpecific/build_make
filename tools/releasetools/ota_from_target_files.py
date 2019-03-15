@@ -843,14 +843,10 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
   model = target_info.GetBuildProp("ro.product.model")
   build = target_info.GetBuildProp("ro.build.date")
 
-  script.Print(" ╔█████████████████████████████╗ ");
-  script.Print(" ║          Descendant         ║ ");
-  script.Print(" ╚█████████████████████████████╝ ");
-  script.Print("  ║ ║                            ");
-  script.Print("  ╚Compiled: %s "%(build)        ");
-  script.Print("    ║                            ");
-  script.Print("    ╚For: %s   "%(model)         ");
-  script.Print(" ███████████████████████████████ ");
+  script.Print("           Descendant          ");
+  script.Print("      Compiled: %s %(build)    ");
+  script.Print("                               ");
+  script.Print("        For: %s   %(model)     ");
 
   script.ShowProgress(system_progress, 0)
 
