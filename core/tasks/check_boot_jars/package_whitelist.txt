@@ -207,10 +207,6 @@ android
 org\.codeaurora\..*
 
 ###################################################
-# org.descendant.keydisabler.jar
-org\.descendant\..*
-
-###################################################
 # apache-xml.jar
 org\.apache\.xml\.res
 org\.apache\.xml\.utils
